@@ -3,6 +3,7 @@ package de.gso.osp.gsoCar.client;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
+//da ist noch eins
 /**
  * The client-side stub for the RPC service.
  */
