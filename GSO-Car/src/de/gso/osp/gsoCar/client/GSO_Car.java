@@ -1,6 +1,7 @@
 package de.gso.osp.gsoCar.client;
 
 import de.gso.osp.gsoCar.shared.FieldVerifier;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -13,6 +14,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -39,7 +41,9 @@ public class GSO_Car implements EntryPoint {
 	public void onModuleLoad() {
 		final Button sendButton = new Button("Send");
 		final TextBox nameField = new TextBox();
-		nameField.setText("GWT User");
+		final PasswordTextBox passwortFeld = new PasswordTextBox();
+		nameField.setText("Benutzername");
+		passwortFeld.setText("Passwort");
 		final Label errorLabel = new Label();
 
 		// We can add style names to widgets
@@ -48,8 +52,10 @@ public class GSO_Car implements EntryPoint {
 		// Add the nameField and sendButton to the RootPanel
 		// Use RootPanel.get() to get the entire body element
 		RootPanel.get("nameFieldContainer").add(nameField);
+		RootPanel.get().add(passwortFeld);
 		RootPanel.get("sendButtonContainer").add(sendButton);
 		RootPanel.get("errorLabelContainer").add(errorLabel);
+		
 
 		// Focus the cursor on the name field when the app loads
 		nameField.setFocus(true);
