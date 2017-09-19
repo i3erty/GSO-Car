@@ -135,6 +135,7 @@ public class GSO_Car implements EntryPoint {
 						serverResponseLabel.setHTML(SERVER_ERROR);
 						dialogBox.center();
 						closeButton.setFocus(true);
+						//.
 					}
 
 					public void onSuccess(String result) {
