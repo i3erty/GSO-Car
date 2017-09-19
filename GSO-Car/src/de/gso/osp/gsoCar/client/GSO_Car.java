@@ -1,7 +1,5 @@
 package de.gso.osp.gsoCar.client;
 
-import de.gso.osp.gsoCar.shared.FieldVerifier;
-
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -18,6 +16,8 @@ import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+
+import de.gso.osp.gsoCar.shared.FieldVerifier;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -39,7 +39,7 @@ public class GSO_Car implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-		final Button sendButton = new Button("Send");
+		final Button sendButton = new Button("Einloggen");
 		final TextBox nameField = new TextBox();
 		final PasswordTextBox passwortFeld = new PasswordTextBox();
 		nameField.setText("Benutzername");
@@ -52,10 +52,9 @@ public class GSO_Car implements EntryPoint {
 		// Add the nameField and sendButton to the RootPanel
 		// Use RootPanel.get() to get the entire body element
 		RootPanel.get("nameFieldContainer").add(nameField);
-		RootPanel.get().add(passwortFeld);
+		RootPanel.get("passwortFeldContainer").add(passwortFeld);
 		RootPanel.get("sendButtonContainer").add(sendButton);
 		RootPanel.get("errorLabelContainer").add(errorLabel);
-		
 
 		// Focus the cursor on the name field when the app loads
 		nameField.setFocus(true);

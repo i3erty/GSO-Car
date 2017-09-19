@@ -31,4 +31,10 @@
 		<nature>com.gwtplugins.gwt.eclipse.core.gwtNature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>AutoLogo</name>
+			<value>file:/C:/Users/i3erty/Desktop/OSP/128053-simple-black-square-icon-transport-travel-transportation-car3.png</value>
+		</variable>
+	</variableList>
 </projectDescription>

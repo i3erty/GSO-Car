@@ -1,8 +1,9 @@
 package de.gso.osp.gsoCar.server;
 
+import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+
 import de.gso.osp.gsoCar.client.GreetingService;
 import de.gso.osp.gsoCar.shared.FieldVerifier;
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
  * The server-side implementation of the RPC service.
@@ -11,7 +12,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class GreetingServiceImpl extends RemoteServiceServlet implements GreetingService {
 
 	public String greetServer(String input) throws IllegalArgumentException {
-		// Verify that the input is valid. 
+		// Verify that the input is valid.
 		if (!FieldVerifier.isValidName(input)) {
 			// If the input is not valid, throw an IllegalArgumentException back to
 			// the client.
@@ -33,7 +34,8 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	 * Escape an html string. Escaping data received from the client helps to
 	 * prevent cross-site script vulnerabilities.
 	 * 
-	 * @param html the html string to escape
+	 * @param html
+	 *            the html string to escape
 	 * @return the escaped string
 	 */
 	private String escapeHtml(String html) {
