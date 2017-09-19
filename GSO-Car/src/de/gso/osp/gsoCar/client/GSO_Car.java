@@ -10,6 +10,7 @@ import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.DockPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PasswordTextBox;
@@ -51,10 +52,14 @@ public class GSO_Car implements EntryPoint {
 
 		// Add the nameField and sendButton to the RootPanel
 		// Use RootPanel.get() to get the entire body element
-		RootPanel.get("nameFieldContainer").add(nameField);
-		RootPanel.get("passwortFeldContainer").add(passwortFeld);
-		RootPanel.get("sendButtonContainer").add(sendButton);
-		RootPanel.get("errorLabelContainer").add(errorLabel);
+		DockPanel mainDock = new DockPanel();
+		VerticalPanel vPane = new VerticalPanel();
+		RootPanel.get().add(mainDock);
+		mainDock.add(vPane, DockPanel.CENTER);
+		vPane.add(nameField);
+		vPane.add(passwortFeld);
+		vPane.add(sendButton);
+		vPane.add(errorLabel);
 
 		// Focus the cursor on the name field when the app loads
 		nameField.setFocus(true);
@@ -89,7 +94,7 @@ public class GSO_Car implements EntryPoint {
 		});
 
 		// Create a handler for the sendButton and nameField
-		class MyHandler implements ClickHandler, KeyUpHandler {
+		class LoginHandler implements ClickHandler, KeyUpHandler {
 			/**
 			 * Fired when the user clicks on the sendButton.
 			 */
@@ -144,7 +149,7 @@ public class GSO_Car implements EntryPoint {
 		}
 
 		// Add a handler to send the name to the server
-		MyHandler handler = new MyHandler();
+		LoginHandler handler = new LoginHandler();
 		sendButton.addClickHandler(handler);
 		nameField.addKeyUpHandler(handler);
 	}
